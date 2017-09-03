@@ -23,7 +23,7 @@ docker build -t mbe1224/confluent-osp-kafka .
 - Debian "slim" image variant
 - Oracle Java SE Development Kit (JDK) addded, without MissionControl, VisualVM, JavaFX and JRE
 - Oracle Java Cryptography Extension added
-- Python 2.7.9-1 & pip 8.1.2 added
+- Python & pip added
 - SHA 256 sum checks for all downloads
 - JAVA\_HOME and SCALA\_HOME environment variables set up
 
