@@ -1,4 +1,4 @@
-FROM mbe1224/confluent-osp-base:latest
+FROM mbe1224/confluent-platform-base:3.2.2
 
 ENV COMPONENT=kafka
 
@@ -9,8 +9,8 @@ RUN echo "===> installing ${COMPONENT}..." \
     && echo "===> clean up ..."  \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* \  
     && echo "===> Setting up ${COMPONENT} dirs..." \
-   	&& mkdir -p /var/lib/${COMPONENT}/data /etc/${COMPONENT}/secrets /etc/confluent/docker \
-   	&& chmod -R ag+w /etc/${COMPONENT} /var/lib/${COMPONENT}/data /etc/${COMPONENT}/secrets \
+    && mkdir -p /var/lib/${COMPONENT}/data /etc/${COMPONENT}/secrets /etc/confluent/docker \
+    && chmod -R ag+w /etc/${COMPONENT} /var/lib/${COMPONENT}/data /etc/${COMPONENT}/secrets \
     && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/${COMMIT_SHA}/debian/kafka/include/etc/confluent/docker/configure" -O "/etc/confluent/docker/configure" \
     && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/${COMMIT_SHA}/debian/kafka/include/etc/confluent/docker/ensure" -O "/etc/confluent/docker/ensure" \
     && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/${COMMIT_SHA}/debian/kafka/include/etc/confluent/docker/kafka.properties.template" -O "/etc/confluent/docker/kafka.properties.template" \
