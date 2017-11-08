@@ -3,9 +3,9 @@
 ### Supported tags and respective Dockerfile links: ###
 
 * ```3.2.2``` _\([3.2.2/Dockerfile]\)_
-[![](https://images.microbadger.com/badges/image/mbe1224/confluent-platform-kafka:3.2.2.svg)](https://microbadger.com/images/mbe1224/confluent-platform-kafka:3.2.2 "")
+[![](https://images.microbadger.com/badges/image/mbe1224/confluent-kafka:3.2.2.svg)](https://microbadger.com/images/mbe1224/confluent-kafka:3.2.2 "")
 * ```3.3.0```, ```latest``` _\([3.3.0/Dockerfile]\)_
-[![](https://images.microbadger.com/badges/image/mbe1224/confluent-platform-kafka:3.3.0.svg)](https://microbadger.com/images/mbe1224/confluent-platform-kafka:3.3.0 "")
+[![](https://images.microbadger.com/badges/image/mbe1224/confluent-kafka:3.3.0.svg)](https://microbadger.com/images/mbe1224/confluent-kafka:3.3.0 "")
 
 *All tag names follow the naming convention of the [Confluent Open Source Platform]*
 
@@ -32,14 +32,14 @@ Therefore, it follows the same structure as the one from the original [repositor
 - tags ```3.3.0``` and```latest``` follow branch [3.3.x]
 
 
-Apart of the base image ([confluent-platform-base]), it has [Apache Kafka] added on top of it, installed using the following Confluent Debian package:
+Apart of the base image ([confluent-base]), it has [Apache Kafka] added on top of it, installed using the following Confluent Debian package:
 - ```confluent-kafka-2.11```
 
 ### Usage: ###
 
 Build the image
 ```shell
-docker build -t mbe1224/confluent-platform-kafka /3.3.0/
+docker build -t mbe1224/confluent-kafka /3.3.0/
 ```
 
 Run the container
@@ -51,7 +51,7 @@ docker run -d \
     -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:19092 \
     -e KAFKA_BROKER_ID=1 \
     -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
-    mbe1224/confluent-platform-kafka
+    mbe1224/confluent-kafka
 ```
 
 ### Environment variables: ###
@@ -90,13 +90,13 @@ Moreover, one can use any of the properties specified in the [Configuration Opti
    [Configuration Options]: <https://kafka.apache.org/documentation/#configuration>
    [Broker Configs]: <https://kafka.apache.org/documentation/#brokerconfigs>
    [Topic-level Configs]: <https://kafka.apache.org/documentation/#topic-config>
-   [3.2.2/Dockerfile]: <https://github.com/MihaiBogdanEugen/docker-confluent-platform-kafka/blob/master/3.2.2/Dockerfile>
-   [3.3.0/Dockerfile]: <https://github.com/MihaiBogdanEugen/docker-confluent-platform-kafka/blob/master/3.3.0/Dockerfile>
+   [3.2.2/Dockerfile]: <https://github.com/MihaiBogdanEugen/docker-confluent-kafka/blob/master/3.2.2/Dockerfile>
+   [3.3.0/Dockerfile]: <https://github.com/MihaiBogdanEugen/docker-confluent-kafka/blob/master/3.3.0/Dockerfile>
    [Confluent utility belt script ('cub')]: <https://raw.githubusercontent.com/confluentinc/cp-docker-images/df0091f5437113d2764cabb7433eee25fba6a4b6/debian/base/include/cub>
    [Docker utility belt script ('dub')]: <https://raw.githubusercontent.com/confluentinc/cp-docker-images/df0091f5437113d2764cabb7433eee25fba6a4b6/debian/base/include/dub>  
    [repository]: <https://github.com/confluentinc/cp-docker-images>
    [3.2.x]: <https://github.com/confluentinc/cp-docker-images/tree/3.2.x>
    [3.3.x]: <https://github.com/confluentinc/cp-docker-images/tree/3.3.x>   
-   [confluent-platform-base]: <https://hub.docker.com/r/mbe1224/confluent-platform-base/>
-   [MIT License]: <https://raw.githubusercontent.com/MihaiBogdanEugen/docker-confluent-platform-kafka/master/LICENSE>
-   [Oracle Binary Code License Agreement]: <https://raw.githubusercontent.com/MihaiBogdanEugen/docker-confluent-platform-kafka/master/Oracle_Binary_Code_License_Agreement%20for%20the%20Java%20SE%20Platform_Products_and_JavaFX>
+   [confluent-base]: <https://hub.docker.com/r/mbe1224/confluent-base/>
+   [MIT License]: <https://raw.githubusercontent.com/MihaiBogdanEugen/docker-confluent-kafka/master/LICENSE>
+   [Oracle Binary Code License Agreement]: <https://raw.githubusercontent.com/MihaiBogdanEugen/docker-confluent-kafka/master/Oracle_Binary_Code_License_Agreement%20for%20the%20Java%20SE%20Platform_Products_and_JavaFX>
